@@ -153,3 +153,5 @@ dmypy.json
 .prof
 *.apk
 # End of https://www.toptal.com/developers/gitignore/api/django
+
+v2/data
