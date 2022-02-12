@@ -7,6 +7,8 @@ import plotly.graph_objs as go
 from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
 import plotly.express as px
 
+import sort_dataframeby_monthorweek as sd
+
 df = pd.read_csv('./data/hotel_booking/hotel_bookings.csv')
 
 # check null
@@ -47,3 +49,4 @@ resort_hotel=hotel1.groupby('arrival_date_month')['adr'].mean().reset_index()
 city_hotel=hotel2.groupby('arrival_date_month')['adr'].mean().reset_index()
 all_hotels=resort_hotel.merge(city_hotel, on="arrival_date_month")
 all_hotels.columns=['month',"price_resort","price_city"]
+all_hotels=sd.Sort_Dataframeby_Month(all_hotels,'month')
