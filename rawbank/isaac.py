@@ -17,7 +17,7 @@ list_noms_r = dtf_right['NOMS'].to_list()
 
 # dtf_left['name_from_df2'] = dtf_left['NOMS'].apply(lambda x: process.extractOne(x, dtf_right['NOMS'].to_list(),score_cutoff=80))
 def findONe(x, b):
-    a = process.extractOne(x, b, score_cutoff=80)
+    a = process.extractOne(x, b, score_cutoff=90)
     return a[0] if a else None
 
 
@@ -28,7 +28,7 @@ def searchN(a, b):
         if s is None: continue
         r.append(dict(left=i, right=s))
 
-
+    return r
 
 
 # a = np.vectorize(findONe)
